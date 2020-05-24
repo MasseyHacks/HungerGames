@@ -20,6 +20,7 @@ settings:
     teleport-at-end: false
     teleport-at-end-time: 30
     max-team-size: 3
+    lobby-world: HungerGamesLobby
 reward:
     enabled: true
     cash: 500

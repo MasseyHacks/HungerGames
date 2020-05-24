@@ -870,7 +870,8 @@ public class Game {
 		String winner = Util.translateStop(Util.convertUUIDListToStringList(win));
 		// prevent not death winners from gaining a prize
 		if (death)
-			Util.broadcast(HG.getPlugin().getLang().player_won.replace("<arena>", name).replace("<winner>", winner));
+			Util.broadcastLocation(HG.getPlugin().getLang().player_won.replace("<arena>", name).replace("<winner>", winner), this.spawns.get(0));
+			Util.broadcastWorld(HG.getPlugin().getLang().player_won.replace("<arena>", name).replace("<winner>", winner), Bukkit.getWorld(Config.lobbyWorld));
 		if (!blocks.isEmpty()) {
 			new Rollback(this);
 		} else {

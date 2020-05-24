@@ -66,6 +66,8 @@ public class Config {
 	public static boolean mcmmoUseSkills;
 	public static boolean mcmmoGainExp;
 
+	public static String lobbyWorld;
+
 	private HG plugin;
 
 	public Config(HG plugin) {
@@ -126,6 +128,8 @@ public class Config {
 
 		mcmmoUseSkills = config.getBoolean("mcmmo.use-skills");
 		mcmmoGainExp = config.getBoolean("mcmmo.gain-experience");
+
+		lobbyWorld = config.getString("settings.lobby-world");
 
         try {
             Vault.setupEconomy();

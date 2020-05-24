@@ -66,6 +66,32 @@ public class Util {
 		Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', HG.getPlugin().getLang().prefix + " " + s));
 	}
 
+	/** Broadcast a message in a world prefixed with plugin name
+	 * @param s Message to send
+	 * @param world World to send message in
+	 */
+	public static void broadcastWorld(String s, World world) {
+		if(world == null){
+			broadcast(s);
+		}
+		else{
+			world.getPlayers().forEach(player -> player.sendMessage(ChatColor.translateAlternateColorCodes('&', HG.getPlugin().getLang().prefix + " " + s)));
+		}
+	}
+
+	/** Broadcast a message in the world of a location prefixed with plugin name
+	 * @param s Message to send
+	 * @param location Location in the world to send message in
+	 */
+	public static void broadcastLocation(String s, Location location) {
+		if(location == null){
+			broadcast(s);
+		}
+		else{
+			broadcastWorld(s, location.getWorld());
+		}
+	}
+
 	/** Shortcut for adding color to a string
 	 * @param string String including color codes
 	 * @return Formatted string
